@@ -53,7 +53,7 @@ function Form(){
       console.log(e.target.value)
       var val  = e.target.value
       console.log(val)
-      dispatch(deleteData(val))
+      // dispatch(deleteData(val))
     }
 	return(
 		<>
