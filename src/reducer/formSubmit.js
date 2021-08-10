@@ -14,9 +14,10 @@ const formSubmit = (state = initialState, action)=>{
 			}
 		case 'DELETE':
 			console.log("Delete Data: ", action.payload)
-			return{
-				formValues: [state.formValues.filter(data => data.email !== action.payload)],
-				msg: "DATA DELETED"
+			return { 
+				...state, 
+				formValues: state.formValues.filter(i => i.email !== action.payload),
+				msg:"DATA DELETED"
 			}
 		default: return state;
 	}

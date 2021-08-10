@@ -50,10 +50,10 @@ function Form(){
       })
     }
     const deleteValue = (e)=>{
-      console.log(e.target.value)
+      // console.log(e.target.value)
       var val  = e.target.value
-      console.log(val)
-      // dispatch(deleteData(val))
+      // console.log(val)
+      dispatch(deleteData(val))
     }
 	return(
 		<>
@@ -98,7 +98,7 @@ function Form(){
                           <td key={i}><span className="input-label">{data}</span></td>
                         ))
                       }
-                      <td key={id}><button type="button" class="btn btn-danger" value={id} onClick={(e)=>deleteValue(e)}>Delete</button></td>
+                      <td key={id}><button type="button" class="btn btn-danger" value={allData.email} onClick={(e)=>deleteValue(e)}>Delete</button></td>
                     </tr>
                   )
               })
