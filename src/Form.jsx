@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+
 import {useSelector, useDispatch} from 'react-redux';
-import {submitForm, deleteData} from './action/index';
+import {submitForm, deleteData, loadData} from './action/index';
 
 function Form(){
 
@@ -49,6 +50,13 @@ function Form(){
         }
       })
     }
+    const onSubmitData = (e) =>{
+      e.preventDefault();
+      dispatch(submitForm(formData))
+    }
+
+
+
     const deleteValue = (e)=>{
       // console.log(e.target.value)
       var val  = e.target.value
@@ -63,9 +71,7 @@ function Form(){
 				</div>
         <h5 className="text-center">{myState.msg}</h5>
 				<div>
-					<form onSubmit={(e)=>{
-            e.preventDefault();
-            dispatch(submitForm(formData))}}>
+					<form onSubmit={(e)=>onSubmitData(e)}>
 					    <div className="text-center">
 					    <input type="text" placeholder="Enter Your First Name" name="fname" onChange={events} /><br/><br/>
 					    <input type="text" placeholder="Enter Your Last Name" name="lname" onChange={events} /><br/><br/>
@@ -106,6 +112,11 @@ function Form(){
           </table>
           ):(<p></p>)
         }
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-md-4">
+          {/*<button onClick={()=>dispatch(loadData())}>Load Data</button>*/}
+        </div>
       </div>
 		</>
 		);

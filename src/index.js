@@ -5,8 +5,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store';
 import {Provider} from 'react-redux';
+import { loadState, saveState } from './localStorage';
 
-
+store.subscribe(() => {
+  saveState(store.getState())
+})
 ReactDOM.render(
   <React.StrictMode>
   <Provider store={store}>

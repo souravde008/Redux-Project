@@ -11,3 +11,9 @@ export const deleteData = (value) =>{
 		payload: value
 	}
 }
+
+export const loadData = () =>{
+	return{
+		type: 'LOAD_DATA'
+	}
+}
